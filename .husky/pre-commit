@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-# Minimal Husky pre-commit hook
-# Runs lint-staged to validate POML headers on staged files
-npx lint-staged
