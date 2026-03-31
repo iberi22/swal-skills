@@ -226,6 +226,18 @@ skills:
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
+  - id: skill-launcher
+    name: "Skill Launcher"
+    description: "Automatically inject skill context into subagent spawning"
+    category: agent
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/skill-launcher/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/skill-launcher/SKILL.md
+    tags: [skill-launcher, subagent, injection]
+    dependencies: []
+    agents: [openclaw]
+
   - id: jules
     name: "Jules Agent"
     description: "Jules autonomous coding agent from Google"
