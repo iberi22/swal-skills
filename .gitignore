@@ -1,50 +1,50 @@
-# Claude Code settings and local files
-.claude/
-.DS_Store
-settings.local.json
-
-# OS generated files
-Thumbs.db
-*.swp
-*.swo
-*~
-
-# IDE files
-.vscode/
-.idea/
-
-# Python caches and environments
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-*.egg-info/
-dist/
-build/
-.venv/
-venv/
-.env
-.env.*
-.python-version
-
-# Logs and temp
-*.log
-*.tmp
-
-# Temporary script files
-check-blank-lines.ps1
-check_lint.js
-test.md
 
 # Bench harness outputs (keep cases and metrics tracked)
-# Only ignore result files, not directories, to allow .gitkeep if needed
-bench/**/results/*.json
-bench/**/results/*.csv
-bench/**/metrics/*.csv
-
+# Claude Code settings and local files
 # Converter output scratch
-poml_out/
-
+# IDE files
+# Logs and temp
 # Node project dependencies
+# Only ignore result files, not directories, to allow .gitkeep if needed
+# OS generated files
+# Python caches and environments
+# Sensitive files
+# Temporary script files
+*.egg-info/
+*.env
+*.key
+*.log
+*.pem
+*.py[cod]
+*.swo
+*.swp
+*.tmp
+*~
+.claude/
+.DS_Store
+.env
+.env.*
+.idea/
+.mypy_cache/
+.pytest_cache/
+.python-version
+.ruff_cache/
+.venv/
+.vscode/
+__pycache__/
+bench/**/metrics/*.csv
+bench/**/results/*.csv
+bench/**/results/*.json
+build/
+check_lint.js
+check-blank-lines.ps1
+credentials.json
+dist/
+MEMORY.md
 node_modules/
+poml_out/
+secrets/
+settings.local.json
+test.md
+Thumbs.db
+venv/
