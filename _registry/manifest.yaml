@@ -1,0 +1,376 @@
+# SWAL Skills Registry
+# Central manifest for all skills - public and private
+# Version: 1.0.0
+# Updated: 2026-03-31
+
+meta:
+  registry_version: "1.0"
+  last_updated: "2026-03-31"
+  maintainer: "SWAL"
+
+# Skills organized by category and visibility
+skills:
+
+  # =========================================
+  # CODING FRAMEWORK SKILLS (PUBLIC)
+  # These are installed from clawhub and mirrored here for raw access
+  # =========================================
+  - id: astro
+    name: "Astro Framework"
+    description: "Deploy multilingual static websites for free on Cloudflare using Astro framework"
+    category: framework
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/astro/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/astro/SKILL.md
+    tags: [astro, svelte, cloudflare, static-site, i18n]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: nextjs
+    name: "Next.js 15"
+    description: "Build Next.js 15 apps with App Router, server components, caching, auth, and production patterns"
+    category: framework
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/nextjs/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/nextjs/SKILL.md
+    tags: [nextjs, react, app-router, server-components, caching]
+    dependencies: [react]
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: tailwindcss
+    name: "Tailwind CSS"
+    description: "Write Tailwind utility classes with proper responsive design, dark mode, and configuration"
+    category: css
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/tailwindcss/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/tailwindcss/SKILL.md
+    tags: [tailwind, css, responsive, dark-mode, utility-first]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: vite
+    name: "Vite Build Tool"
+    description: "Vite build tool configuration and optimization"
+    category: build-tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/vite/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/vite/SKILL.md
+    tags: [vite, build, dev-server, hmr]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: rust
+    name: "Rust Language"
+    description: "Rust patterns and best practices"
+    category: language
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/rust/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/rust/SKILL.md
+    tags: [rust, cargo, systems-programming]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen]
+
+  - id: python
+    name: "Python Best Practices"
+    description: "Python best practices and patterns"
+    category: language
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/python/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/python/SKILL.md
+    tags: [python, pip, virtualenv, best-practices]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: react
+    name: "React"
+    description: "React best practices with hooks, composition, and performance"
+    category: framework
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/react/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/react/SKILL.md
+    tags: [react, hooks, component, state-management]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  # =========================================
+  # SWAL AGENT SKILLS (PRIVATE - INTERNAL)
+  # =========================================
+  - id: sales-pro
+    name: "Sales Pro"
+    description: "Generate RFIs, proposals, and research prospects for SWAL products"
+    category: business
+    visibility: private
+    repo: iberi22/agents-flows-recipes
+    path: skills/sales-pro/SKILL.md
+    raw_url: null  # Private - no public URL
+    tags: [sales, rfi, proposal, crm, swal]
+    dependencies: []
+    agents: [openclaw]
+    credentials_required: true
+
+  - id: src-generator
+    name: "SRC Document Generator"
+    description: "Generate professional SRC documents (IEEE 830) for software requirements"
+    category: documentation
+    visibility: private
+    repo: iberi22/agents-flows-recipes
+    path: skills/src-generator/SKILL.md
+    raw_url: null
+    tags: [src, ieee-830, requirements, documentation]
+    dependencies: []
+    agents: [openclaw]
+
+  # =========================================
+  # OPENCLAW AGENT SKILLS (SHARED)
+  # =========================================
+  - id: frontend-agent
+    name: "Frontend Developer Agent"
+    description: "React/Vue/Angular development with UI/UX best practices"
+    category: agent
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/frontend-agent/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/frontend-agent/SKILL.md
+    tags: [frontend, react, vue, angular, ui, ux]
+    dependencies: [react, tailwindcss]
+    agents: [openclaw]
+
+  - id: frontend-doctor
+    name: "Frontend Debug Agent"
+    description: "Debug UI issues using Web MCP and Chrome DevTools"
+    category: agent
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/frontend-doctor/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/frontend-doctor/SKILL.md
+    tags: [debug, chrome-devtools, ui-fix, e2e, testing]
+    dependencies: [playwright]
+    agents: [openclaw]
+
+  - id: github
+    name: "GitHub CLI"
+    description: "GitHub operations via gh CLI - issues, PRs, CI, code review"
+    category: tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/github/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/github/SKILL.md
+    tags: [github, git, cli, issues, pr, ci]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen]
+
+  - id: web-research
+    name: "Web Research"
+    description: "Deep research using Tavily, Brave Search, and web scraping"
+    category: tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/web-research/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/web-research/SKILL.md
+    tags: [research, tavily, brave, scraping, ai-search]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen]
+
+  - id: healthcheck
+    name: "Security Healthcheck"
+    description: "Host security hardening and risk-tolerance configuration"
+    category: security
+    visibility: private
+    repo: iberi22/agents-flows-recipes
+    path: skills/healthcheck/SKILL.md
+    raw_url: null
+    tags: [security, firewall, hardening, audit]
+    dependencies: []
+    agents: [openclaw]
+
+  - id: gemini
+    name: "Gemini CLI"
+    description: "Gemini CLI for one-shot Q&A, summaries, and generation"
+    category: tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/gemini/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/gemini/SKILL.md
+    tags: [gemini, cli, summarization, qa]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: codex
+    name: "Codex CLI"
+    description: "Codex CLI integration for code generation and review"
+    category: tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/codex/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/codex/SKILL.md
+    tags: [codex, openai, code-generation, review]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: qwen
+    name: "Qwen Coder CLI"
+    description: "Qwen Coder CLI for code generation"
+    category: tool
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/qwen/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/qwen/SKILL.md
+    tags: [qwen, alibaba, code-generation]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: jules
+    name: "Jules Agent"
+    description: "Jules autonomous coding agent from Google"
+    category: agent
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/jules/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/jules/SKILL.md
+    tags: [jules, google, autonomous, coding]
+    dependencies: []
+    agents: [openclaw]
+
+  # =========================================
+  # POML RECIPES (EXECUTABLE AGENTS)
+  # =========================================
+  recipes:
+    - id: ai-engineer
+      name: "AI Engineer"
+      department: engineering
+      path: poml/engineering/ai-engineer.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/ai-engineer.poml
+      topology: solo
+      bench_id: ai-engineer
+      visibility: public
+
+    - id: frontend-developer
+      name: "Frontend Developer"
+      department: engineering
+      path: poml/engineering/frontend-developer.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/frontend-developer.poml
+      topology: solo
+      bench_id: frontend-developer
+      visibility: public
+
+    - id: backend-architect
+      name: "Backend Architect"
+      department: engineering
+      path: poml/engineering/backend-architect.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/backend-architect.poml
+      topology: solo
+      bench_id: backend-architect
+      visibility: public
+
+    - id: devops-automator
+      name: "DevOps Automator"
+      department: engineering
+      path: poml/engineering/devops-automator.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/devops-automator.poml
+      topology: solo
+      visibility: public
+
+    - id: test-writer-fixer
+      name: "Test Writer/Fixer"
+      department: engineering
+      path: poml/engineering/test-writer-fixer.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/test-writer-fixer.poml
+      topology: solo
+      visibility: public
+      trigger: "After implementing features, fixing bugs, or modifying code"
+
+    - id: rapid-prototyper
+      name: "Rapid Prototyper"
+      department: engineering
+      path: poml/engineering/rapid-prototyper.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/rapid-prototyper.poml
+      topology: solo
+      visibility: public
+
+    - id: mobile-app-builder
+      name: "Mobile App Builder"
+      department: engineering
+      path: poml/engineering/mobile-app-builder.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/engineering/mobile-app-builder.poml
+      topology: solo
+      visibility: public
+
+    - id: content-creator
+      name: "Content Creator"
+      department: marketing
+      path: poml/marketing/content-creator.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/marketing/content-creator.poml
+      topology: solo
+      visibility: public
+
+    - id: growth-hacker
+      name: "Growth Hacker"
+      department: marketing
+      path: poml/marketing/growth-hacker.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/marketing/growth-hacker.poml
+      topology: solo
+      visibility: public
+
+    - id: studio-coach
+      name: "Studio Coach"
+      department: bonus
+      path: poml/bonus/studio-coach.poml
+      raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/poml/bonus/studio-coach.poml
+      topology: solo
+      visibility: public
+      trigger: "When complex multi-agent tasks begin or agents need guidance"
+
+# Tool aliases mapping for multi-agent support
+tool_aliases:
+  universal:
+    - fs.read
+    - fs.write
+    - fs.replace
+    - fs.search
+    - fs.glob
+    - shell.run
+    - web.fetch
+
+  openclaw:
+    fs.read: read
+    fs.write: write
+    fs.replace: edit
+    fs.search: exec
+    shell.run: exec
+    web.fetch: web_fetch
+
+  codex:
+    fs.read: read_file
+    fs.write: write_file
+    fs.replace: replace
+    shell.run: run_shell_command
+    web.fetch: web_fetch
+
+  claude:
+    fs.read: Read
+    fs.write: Write
+    fs.replace: Edit
+    fs.search: Search
+    shell.run: Bash
+    web.fetch: WebFetch
+
+  qwen:
+    fs.read: read_file
+    fs.write: write_file
+    fs.replace: replace
+    shell.run: run_shell_command
+    web.fetch: fetch
+
+  opencode:
+    fs.read: read
+    fs.write: write
+    fs.replace: edit
+    shell.run: shell
+    web.fetch: browse
