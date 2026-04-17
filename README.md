@@ -114,6 +114,23 @@ skills:
 
 MIT - SWAL (SouthWest AI Labs)
 
+## GitCore Protocol v3.6.0
+
+All SWAL skills follow the **GitCore Protocol v3.6.0** cross-repo convention, enabling seamless integration across SWAL projects (Cortex, ManteniApp, GOS, gestalt-rust, worldexams).
+
+### Key Features
+
+- **Cross-repo skill loading**: Skills can reference files in other SWAL repos via raw GitHub URLs
+- **Consistent versioning**: All skills declare `gitcore_protocol: "3.6.0"`
+- **Universal compatibility**: Works with OpenClaw, Codex, Claude Code, Qwen, and OpenCode agents
+
+### Integrated Skills
+
+| Skill | Source Repo | Purpose |
+|-------|-------------|---------|
+| `cortex-memory` | iberi22/swal-skills | Cortex memory integration - mandatory for all SWAL agents |
+| `gestalt-swarm` | iberi22/gestalt-rust | Parallel multi-agent execution via Gestalt Swarm |
+
 ---
 
 **Works with any AI coding agent.** Just read the `SKILL.md` file for context.

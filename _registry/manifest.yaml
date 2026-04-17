@@ -5,8 +5,10 @@
 
 meta:
   registry_version: "1.0"
-  last_updated: "2026-03-31"
+  last_updated: "2026-04-17"
   maintainer: "SWAL"
+  gitcore_protocol: "3.6.0"
+  gitcore_note: "All SWAL skills follow GitCore cross-repo convention for seamless cross-project integration"
 
 # Skills organized by category and visibility
 skills:
@@ -114,6 +116,32 @@ skills:
     dependencies: []
     agents: [openclaw]
     credentials_required: true
+
+  - id: cortex-memory
+    name: "Cortex Memory"
+    description: "Cortex memory integration for SWAL agents - mandatory Cortex context loading and persistence"
+    category: integration
+    visibility: private
+    repo: iberi22/swal-skills
+    path: skills/cortex-memory/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/cortex-memory/SKILL.md
+    tags: [cortex, memory, swal, context, persistence]
+    dependencies: []
+    agents: [openclaw, codex, opencode]
+    gitcore_protocol: "3.6.0"
+
+  - id: gestalt-swarm
+    name: "Gestalt Swarm"
+    description: "Gestalt Swarm parallel execution - launch N CLI agents in parallel and parse JSON results"
+    category: agent
+    visibility: public
+    repo: iberi22/gestalt-rust
+    path: skills/gestalt-swarm/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/gestalt-swarm/SKILL.md
+    tags: [gestalt, swarm, parallel, multi-agent, execution]
+    dependencies: []
+    agents: [openclaw, codex, opencode]
+    gitcore_protocol: "3.6.0"
 
   - id: src-generator
     name: "SRC Document Generator"
