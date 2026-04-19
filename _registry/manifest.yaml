@@ -65,6 +65,30 @@ skills:
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
+  - id: deploy-anywhere
+    name: "Deploy Anywhere"
+    description: "Universal deployment skill for Cloudflare Pages, Vercel, Railway, Fly.io, Netlify, and more"
+    category: devops
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/deploy-anywhere/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/deploy-anywhere/SKILL.md
+    tags: [deploy, cloudflare, vercel, railway, netlify, flyio, hosting]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
+  - id: web-design-guidelines
+    name: "Web Design Guidelines"
+    description: "UI audit skill — 100+ rules for accessibility, performance, and UX compliance"
+    category: review
+    visibility: public
+    repo: iberi22/agents-flows-recipes
+    path: skills/web-design-guidelines/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/web-design-guidelines/SKILL.md
+    tags: [accessibility, ux, ui, audit, a11y, performance]
+    dependencies: []
+    agents: [openclaw, codex, claude, qwen, opencode]
+
   - id: rust
     name: "Rust Language"
     description: "Rust patterns and best practices"
@@ -86,18 +110,6 @@ skills:
     path: skills/python/SKILL.md
     raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/python/SKILL.md
     tags: [python, pip, virtualenv, best-practices]
-    dependencies: []
-    agents: [openclaw, codex, claude, qwen, opencode]
-
-  - id: react
-    name: "React"
-    description: "React best practices with hooks, composition, and performance"
-    category: framework
-    visibility: public
-    repo: iberi22/agents-flows-recipes
-    path: skills/react/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/react/SKILL.md
-    tags: [react, hooks, component, state-management]
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 

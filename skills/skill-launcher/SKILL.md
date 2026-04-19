@@ -1,7 +1,10 @@
 ---
 name: skill-launcher
 description: Automatically inject skill context into subagent spawning. Use this skill when launching any subagent to ensure they have the right skills loaded for their task. This skill provides the launching protocol and skill context injection.
+license: MIT
 metadata:
+  author: swal
+  version: "1.0.0"
   openclaw:
     autoLoad: true
     forSubagents: true

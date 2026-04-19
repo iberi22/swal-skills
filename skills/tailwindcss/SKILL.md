@@ -1,7 +1,19 @@
 ---
 name: Tailwind CSS
 description: Write Tailwind utility classes with proper responsive design, dark mode, and configuration.
-metadata: {"clawdbot":{"emoji":"🌊","requires":{"bins":["npx"]},"os":["linux","darwin","win32"]}}
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
+  clawdbot:
+    emoji: 🌊
+    requires:
+      bins:
+        - npx
+    os:
+      - linux
+      - darwin
+      - win32
 ---
 
 ## Content Configuration

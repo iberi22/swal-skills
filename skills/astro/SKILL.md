@@ -1,6 +1,10 @@
 ---
 name: astro
 description: Deploy multilingual static websites for free on Cloudflare using Astro framework with markdown source files. Use when: (1) Creating new static sites or blogs, (2) Setting up multilingual (i18n) content, (3) Deploying to Cloudflare Pages, (4) Converting markdown to static websites, (5) Setting up free hosting infrastructure.
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
 ---
 
 # Astro Static Site Generator

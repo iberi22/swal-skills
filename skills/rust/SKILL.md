@@ -3,6 +3,10 @@ name: Rust
 slug: rust
 version: 1.0.1
 description: Write idiomatic Rust avoiding ownership pitfalls, lifetime confusion, and common borrow checker battles.
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.1"
 metadata: {"clawdbot":{"emoji":"🦀","requires":{"bins":["rustc","cargo"]},"os":["linux","darwin","win32"]}}
 ---
 

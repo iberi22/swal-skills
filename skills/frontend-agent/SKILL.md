@@ -2,6 +2,10 @@
 name: frontend-agent
 description: 前端开发专家 - React/Vue/Angular、UI 实现、性能优化
 homepage: https://github.com/openclaw/openclaw
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
 ---
 
 # 🎨 前端开发专家 (Frontend Developer Agent)

@@ -1,6 +1,10 @@
 ---
 name: codex
 description: Use Codex CLI for code generation, review, and autonomous coding tasks. Use this skill when you need OpenAI Codex to perform tasks.
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
 ---
 
 # Codex CLI Skill

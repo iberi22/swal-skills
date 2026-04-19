@@ -1,7 +1,10 @@
 ---
 name: Frontend Doctor
 description: Diagnose and fix common frontend issues — white screen, JS errors, resource loading failures, React/Vue hydration, browser extension popup, and CSS layout bugs.
+license: MIT
 metadata:
+  author: swal
+  version: "1.0.0"
   openclaw:
     emoji: 🩺
     homepage: https://github.com/openclaw/clawhub

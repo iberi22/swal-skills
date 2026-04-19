@@ -1,3 +1,12 @@
+---
+name: qwen
+description: Qwen CLI integration for Alibaba's Qwen AI models. Use for code generation, review, and autonomous coding tasks with Qwen Coder.
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
+---
+
 # Qwen CLI Skill
 
 > Qwen CLI integration for Alibaba's Qwen AI models.

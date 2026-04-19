@@ -3,6 +3,10 @@ name: NextJS
 slug: nextjs
 version: 1.1.0
 homepage: https://clawic.com/skills/nextjs
+license: MIT
+metadata:
+  author: swal
+  version: "1.1.0"
 description: Build Next.js 15 apps with App Router, server components, caching, auth, and production patterns.
 metadata: {"clawdbot":{"emoji":"⚡","requires":{"bins":[]},"os":["linux","darwin","win32"]}}
 ---

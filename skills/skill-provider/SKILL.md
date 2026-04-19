@@ -1,7 +1,10 @@
 ---
 name: skill-provider
 description: Dynamically load and manage skills from the SWAL registry. Use when you need to access a specific skill (like astro, nextjs, tailwindcss) or when you want to list available skills. The skill provider fetches skills from raw GitHub URLs or serves them from local cache. Perfect for agents that need skills on-the-fly without pre-installation.
+license: MIT
 metadata:
+  author: swal
+  version: "1.0.0"
   openclaw:
     requires:
       bins: ["node"]

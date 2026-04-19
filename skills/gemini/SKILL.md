@@ -1,3 +1,12 @@
+---
+name: gemini
+description: Gemini CLI integration for local AI-powered development tasks.
+license: MIT
+metadata:
+  author: swal
+  version: "1.0.0"
+---
+
 # Gemini CLI Skill
 
 > Gemini CLI integration for local AI-powered development tasks.
@@ -18,8 +27,8 @@ gemini --version
 # Login con Google
 gemini login
 
-# Configurar modelo
-gemini config set model gemini-2.0-flash
+# Configurar modelo por defecto
+gemini config set model gemini-3-flash-preview
 
 # Verificar
 gemini config list
@@ -73,7 +82,7 @@ result = cli.run("Your prompt here")
 # Con opciones
 result = cli.run(
     prompt="Analyze this code",
-    model="gemini-2.0-flash",
+    model="gemini-3-flash-preview",
     temperature=0.7,
     max_tokens=2000,
     system_prompt="You are a code reviewer"
