@@ -167,6 +167,42 @@ skills:
     dependencies: []
     agents: [openclaw]
 
+  - id: worldexams-generator
+    name: "WorldExams Generator"
+    description: "Generates ICFES Colombia question bundles using MiniMax MCP"
+    category: generation
+    visibility: private
+    repo: iberi22/swal-skills
+    path: skills/worldexams-generator/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/worldexams-generator/SKILL.md
+    tags: [worldexams, icfes, education, minimax, generation]
+    dependencies: [minimax-tools, cortex-memory]
+    agents: [openclaw, codex, opencode]
+
+  - id: worldexams-curator
+    name: "WorldExams Curator"
+    description: "Quality control and formatting for WorldExams bundles"
+    category: review
+    visibility: private
+    repo: iberi22/swal-skills
+    path: skills/worldexams-curator/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/worldexams-curator/SKILL.md
+    tags: [worldexams, curation, review, quality-control]
+    dependencies: [cortex-memory]
+    agents: [openclaw, codex, opencode]
+
+  - id: worldexams-validator
+    name: "WorldExams Validator"
+    description: "Automated validation and regeneration for WorldExams bundles"
+    category: review
+    visibility: private
+    repo: iberi22/swal-skills
+    path: skills/worldexams-validator/SKILL.md
+    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/worldexams-validator/SKILL.md
+    tags: [worldexams, validator, automation, icfes]
+    dependencies: [worldexams-generator, cortex-memory]
+    agents: [openclaw, codex, opencode]
+
   # =========================================
   # OPENCLAW AGENT SKILLS (SHARED)
   # =========================================

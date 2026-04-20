@@ -207,6 +207,16 @@ source ~/.openclaw/secrets.env  # Recargar en sesión
 | understand_image | MiniMax-VL-01 | MINIMAX_API_KEY | Bundled con M2.7 |
 | Audio transcription | Groq Whisper | GROQ_API_KEY | Fallback para audio |
 
+## Generación de Contenido con Web Search
+
+Para la generación de exámenes (WorldExams), `web_search` es fundamental para:
+1. Buscar ejemplos reales de preguntas ICFES Colombia (grados 6, 9, 11).
+2. Investigar temas curriculares actuales del Ministerio de Educación.
+3. Encontrar textos de lectura crítica y artículos científicos para base de preguntas.
+
+### Prompt Sugerido para Generación
+"Usa la herramienta `web_search` para buscar el estándar actual del ICFES para [MATERIA] de grado [GRADO]. Luego genera 5 preguntas siguiendo ese formato JSON."
+
 ## Activación
 
 Este skill se activa automáticamente cuando:
