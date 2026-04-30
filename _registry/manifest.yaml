@@ -303,14 +303,14 @@ skills:
     agents: [openclaw, codex, claude, qwen, opencode]
 
   - id: coding-agent
-    name: "Coding Agent"
-    description: "Delegate coding tasks to Codex, Claude Code, OpenCode, or Pi agents via background process. Includes OpenCode configuration with DeepSeek V4 Pro support and parallel execution via git worktrees."
+    name: "Coding Agent (SWAL)"
+    description: "Delegate coding tasks to Codex, Claude Code, OpenCode, or Pi agents via background process. SWAL environment: DeepSeek V4 Pro (1M tokens), MiniMax-M2.7, git worktrees for parallelism."
     category: tool
-    visibility: public
+    visibility: private
     repo: iberi22/swal-skills
     path: skills/coding-agent/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/coding-agent/SKILL.md
-    tags: [coding, codex, claude, opencode, pi, parallel, worktree, deepseek]
+    raw_url: null
+    tags: [coding, codex, claude, opencode, pi, parallel, worktree, deepseek, swal, minimax]
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
