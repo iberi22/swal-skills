@@ -146,11 +146,11 @@ skills:
     name: "Gestalt Swarm"
     description: "Gestalt Swarm parallel execution - launch N CLI agents in parallel and parse JSON results"
     category: agent
-    visibility: public
+    visibility: private
     repo: iberi22/gestalt-rust
     path: skills/gestalt-swarm/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/gestalt-swarm/SKILL.md
-    tags: [gestalt, swarm, parallel, multi-agent, execution]
+    raw_url: null
+    tags: [gestalt, swarm, parallel, multi-agent, execution, swal]
     dependencies: []
     agents: [openclaw, codex, opencode]
     gitcore_protocol: "3.6.0"
@@ -316,25 +316,25 @@ skills:
 
   - id: skill-launcher
     name: "Skill Launcher"
-    description: "Automatically inject skill context into subagent spawning"
+    description: "Automatically inject skill context into subagent spawning - internal SWAL orchestration"
     category: agent
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/skill-launcher/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/skill-launcher/SKILL.md
-    tags: [skill-launcher, subagent, injection]
+    raw_url: null
+    tags: [skill-launcher, subagent, injection, swal, orchestration]
     dependencies: []
     agents: [openclaw]
 
   - id: jules
     name: "Jules Agent"
-    description: "Jules autonomous coding agent from Google"
+    description: "Jules autonomous coding agent from Google - SWAL configuration with AI Pro (100 tasks/24h, 15 concurrent)"
     category: agent
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/jules/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/jules/SKILL.md
-    tags: [jules, google, autonomous, coding]
+    raw_url: null
+    tags: [jules, google, autonomous, coding, swal, google-ai-pro]
     dependencies: []
     agents: [openclaw]
 
