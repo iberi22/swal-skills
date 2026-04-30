@@ -1,134 +1,163 @@
 ---
 name: github
-description: GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs.
-license: MIT
+description: "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured."
 metadata:
-  author: swal
-  version: "1.0.0"
+  {
+    "openclaw":
+      {
+        "emoji": "🐙",
+        "requires": { "bins": ["gh"] },
+        "install":
+          [
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "gh",
+              "bins": ["gh"],
+              "label": "Install GitHub CLI (brew)",
+            },
+            {
+              "id": "apt",
+              "kind": "apt",
+              "package": "gh",
+              "bins": ["gh"],
+              "label": "Install GitHub CLI (apt)",
+            },
+          ],
+      },
+  }
 ---
 
-# GitHub CLI Skill — SWAL
+# GitHub Skill
 
-## Overview
+Use the `gh` CLI to interact with GitHub repositories, issues, PRs, and CI.
 
-This skill documents how to use `gh` CLI for GitHub operations in SWAL projects.
+## When to Use
 
-## Authentication
+✅ **USE this skill when:**
 
-### Token-Based Auth (RECOMMENDED for automated scripts)
+- Checking PR status, reviews, or merge readiness
+- Viewing CI/workflow run status and logs
+- Creating, closing, or commenting on issues
+- Creating or merging pull requests
+- Querying GitHub API for repository data
+- Listing repos, releases, or collaborators
 
-**⚠️ IMPORTANT:** When running `gh` in exec sessions (OpenClaw context), tokens don't persist between sessions. The token must be provided explicitly or stored in a persistent manner.
+## When NOT to Use
 
-```powershell
-# Method 1: Set GH_TOKEN environment variable (session-scoped)
-$env:GH_TOKEN = "gho_your_token_here"
-gh auth login -h github.com --with-token
+❌ **DON'T use this skill when:**
 
-# Method 2: Use --with-token directly (PowerShell)
-$token | gh auth login -h github.com --with-token
+- Local git operations (commit, push, pull, branch) → use `git` directly
+- Non-GitHub repos (GitLab, Bitbucket, self-hosted) → different CLIs
+- Cloning repositories → use `git clone`
+- Reviewing actual code changes → use `coding-agent` skill
+- Complex multi-file diffs → use `coding-agent` or read files directly
 
-# Method 3: Use insecure storage (saves to plain text - NOT recommended for production)
-gh auth login -h github.com --insecure-storage
+## Setup
+
+```bash
+# Authenticate (one-time)
+gh auth login
+
+# Verify
+gh auth status
 ```
-
-### Why tokens don't persist
-
-- `gh` on Windows stores tokens in **Windows Credential Manager** under your user profile
-- exec sessions in OpenClaw may run as **SYSTEM** or different user context
-- Solution: Always provide token explicitly OR use `--insecure-storage`
-
-### Getting a Token
-
-1. Go to: https://github.com/settings/tokens
-2. Generate new token (classic)
-3. Required scopes: `repo`, `read:org`, `workflow`
-4. Copy token (starts with `ghp_` or `gho_`)
 
 ## Common Commands
 
-### Repository Operations
+### Pull Requests
 
 ```bash
-# Clone a repo
-git clone https://github.com/iberi22/repo-name.git
+# List PRs
+gh pr list --repo owner/repo
 
-# Fork and clone in one command
-gh repo fork owner/repo --clone
+# Check CI status
+gh pr checks 55 --repo owner/repo
 
-# Create repo from current directory
-gh repo create owner/repo-name --public --source=. --push
+# View PR details
+gh pr view 55 --repo owner/repo
 
-# List repos for org/user
-gh repo list iberi22 --limit 10
+# Create PR
+gh pr create --title "feat: add feature" --body "Description"
 
-# View repo details
-gh repo view owner/repo
-
-# View PRs
-gh pr list
-gh pr view 123
+# Merge PR
+gh pr merge 55 --squash --repo owner/repo
 ```
 
-### Authentication Check
+### Issues
 
 ```bash
-# Check auth status
-gh auth status
+# List issues
+gh issue list --repo owner/repo --state open
 
-# Check who you're logged in as
-gh api user
+# Create issue
+gh issue create --title "Bug: something broken" --body "Details..."
+
+# Close issue
+gh issue close 42 --repo owner/repo
 ```
 
-### Workflows
+### CI/Workflow Runs
 
 ```bash
-# Trigger workflow manually
-gh workflow run workflow-name --ref branch
+# List recent runs
+gh run list --repo owner/repo --limit 10
 
-# View workflow runs
-gh run list
+# View specific run
+gh run view <run-id> --repo owner/repo
 
-# Watch a run
-gh run watch
+# View failed step logs only
+gh run view <run-id> --repo owner/repo --log-failed
+
+# Re-run failed jobs
+gh run rerun <run-id> --failed --repo owner/repo
 ```
 
-## SWAL Convention
+### API Queries
 
-| Item | Value |
-|------|-------|
-| **Repo Principal** | `iberi22/*` (NOT southwest-ai-labs) |
-| **Carpeta Proyectos** | `E:\scripts-python` |
-| **GitHub Token** | Stored in `GH_TOKEN` env var |
-
-## Troubleshooting
-
-### "Token is invalid" error
-
-This happens when:
-1. Token expired or was revoked → Generate new token
-2. Running in different user context → Use `$env:GH_TOKEN` explicitly
-3. Credential Manager issue → Use `--insecure-storage` flag
-
-### "Repository not found" after push
-
-The remote repo doesn't exist on GitHub yet:
 ```bash
-gh repo create owner/repo-name --public --source=. --push
+# Get PR with specific fields
+gh api repos/owner/repo/pulls/55 --jq '.title, .state, .user.login'
+
+# List all labels
+gh api repos/owner/repo/labels --jq '.[].name'
+
+# Get repo stats
+gh api repos/owner/repo --jq '{stars: .stargazers_count, forks: .forks_count}'
 ```
 
-### Fork failed - not an organization
+## JSON Output
 
-`gh repo fork` with `--org` only works for orgs, not user accounts:
+Most commands support `--json` for structured output with `--jq` filtering:
+
 ```bash
-# For user account (iberi22 is a user, not org)
-gh repo fork owner/repo --clone
-
-# Not: gh repo fork owner/repo --org iberi22
+gh issue list --repo owner/repo --json number,title --jq '.[] | "\(.number): \(.title)"'
+gh pr list --json number,title,state,mergeable --jq '.[] | select(.mergeable == "MERGEABLE")'
 ```
 
-## Environment Variables
+## Templates
 
-| Variable | Description |
-|----------|-------------|
-| `GH_TOKEN` | GitHub Personal Access Token |
-| `GITHUB_TOKEN` | Alias for GH_TOKEN |
+### PR Review Summary
+
+```bash
+# Get PR overview for review
+PR=55 REPO=owner/repo
+echo "## PR #$PR Summary"
+gh pr view $PR --repo $REPO --json title,body,author,additions,deletions,changedFiles \
+  --jq '"**\(.title)** by @\(.author.login)\n\n\(.body)\n\n📊 +\(.additions) -\(.deletions) across \(.changedFiles) files"'
+gh pr checks $PR --repo $REPO
+```
+
+### Issue Triage
+
+```bash
+# Quick issue triage view
+gh issue list --repo owner/repo --state open --json number,title,labels,createdAt \
+  --jq '.[] | "[\(.number)] \(.title) - \([.labels[].name] | join(", ")) (\(.createdAt[:10]))"'
+```
+
+## Notes
+
+- Always specify `--repo owner/repo` when not in a git directory
+- Use URLs directly: `gh pr view https://github.com/owner/repo/pull/55`
+- Rate limits apply; use `gh api --cache 1h` for repeated queries

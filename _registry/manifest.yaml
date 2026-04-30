@@ -129,6 +129,19 @@ skills:
     agents: [openclaw]
     credentials_required: true
 
+  - id: xavier2-context
+    name: "Xavier2 Context Engine"
+    description: "Xavier2 as the central context engine for SWAL - intelligent memory, decision-making, and context orchestration. CEO brain that connects context, decisions and agents."
+    category: integration
+    visibility: private
+    repo: iberi22/swal-skills
+    path: skills/xavier2-context/SKILL.md
+    raw_url: null
+    tags: [xavier2, memory, context, ceo, brain, swal, decisions]
+    dependencies: []
+    agents: [openclaw, codex, opencode]
+    gitcore_protocol: "3.6.0"
+
   - id: cortex-memory
     name: "Cortex Memory"
     description: "Cortex memory integration for SWAL agents - mandatory Cortex context loading and persistence"
@@ -136,7 +149,7 @@ skills:
     visibility: private
     repo: iberi22/swal-skills
     path: skills/cortex-memory/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/swal-skills/main/skills/cortex-memory/SKILL.md
+    raw_url: null
     tags: [cortex, memory, swal, context, persistence]
     dependencies: []
     agents: [openclaw, codex, opencode]
@@ -232,13 +245,13 @@ skills:
 
   - id: github
     name: "GitHub CLI"
-    description: "GitHub operations via gh CLI - issues, PRs, CI, code review"
+    description: "GitHub operations via gh CLI - SWAL methodology for issues, PRs, CI, code review"
     category: tool
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/github/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/github/SKILL.md
-    tags: [github, git, cli, issues, pr, ci]
+    raw_url: null
+    tags: [github, git, cli, issues, pr, ci, swal, methodology]
     dependencies: []
     agents: [openclaw, codex, claude, qwen]
 
@@ -268,37 +281,37 @@ skills:
 
   - id: gemini
     name: "Gemini CLI"
-    description: "Gemini CLI for one-shot Q&A, summaries, and generation"
+    description: "Gemini CLI integration - SWAL configuration for summarization and QA"
     category: tool
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/gemini/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/gemini/SKILL.md
-    tags: [gemini, cli, summarization, qa]
+    raw_url: null
+    tags: [gemini, cli, summarization, qa, swal]
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
   - id: codex
     name: "Codex CLI"
-    description: "Codex CLI integration for code generation and review"
+    description: "Codex CLI integration for SWAL code generation and review"
     category: tool
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/codex/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/codex/SKILL.md
-    tags: [codex, openai, code-generation, review]
+    raw_url: null
+    tags: [codex, openai, code-generation, review, swal]
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
   - id: qwen
     name: "Qwen Coder CLI"
-    description: "Qwen Coder CLI for code generation"
+    description: "Qwen Coder CLI integration for SWAL code generation"
     category: tool
-    visibility: public
-    repo: iberi22/agents-flows-recipes
+    visibility: private
+    repo: iberi22/swal-skills
     path: skills/qwen/SKILL.md
-    raw_url: https://raw.githubusercontent.com/iberi22/agents-flows-recipes/main/skills/qwen/SKILL.md
-    tags: [qwen, alibaba, code-generation]
+    raw_url: null
+    tags: [qwen, alibaba, code-generation, swal]
     dependencies: []
     agents: [openclaw, codex, claude, qwen, opencode]
 
