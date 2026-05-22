@@ -7,9 +7,16 @@
     "lint-staged": "^15.2.7"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "audit": "pnpm audit",
+    "verify:deps": "pnpm audit && pnpm outdated"
   },
   "lint-staged": {
     "poml/**/*.poml": "python scripts/check_poml_headers.py --"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.12.0"
   }
 }
