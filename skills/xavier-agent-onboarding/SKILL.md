@@ -242,7 +242,18 @@ NEON_TABLE=memories_supabase_mirror
 - ❌ Do NOT overwrite user's AGENTS.md, MEMORY.md, or TOOLS.md — only suggest edits
 - ❌ Do NOT run scan+upload on every heartbeat (cache results, re-scan weekly at most)
 - ❌ Do NOT output the same command result 3 times due to timeouts (dedup sequential identical outputs)
-- ❌ Do NOT use `connection_timeout=2000` for Neon pooler on rapid connections — use 5000ms with backoff
+- ❌ Do NOT run `connection_timeout=2000` for Neon pooler on rapid connections — use 5000ms with backoff
+- ❌ NEVER hardcode credentials in scripts pushed to GitHub (even in private repos — scanning bots find them)
+- ❌ NEVER use a `.env` file tracked by git — load from `~/.xavier/env` at runtime
+- ❌ If a credential is exposed, DELETE the file from git history immediately (`git rm` + push) and rotate the credential
+
+### Security protocol for credentials
+
+1. Always load secrets from `~/.xavier/env` — never inline
+2. Template files go in repo as `.env.xavier.example` with placeholders (`***your-key-here***`)
+3. Add `scripts/.env*` to `.gitignore` if you create an actual env file in the repo dir
+4. If exposed: `git rm` the file, commit, push, then rotate the credential immediately
+5. GitHub secret scanning alerts are real — Neon, Supabase, AWS all monitor
 
 ---
 
