@@ -165,6 +165,12 @@ Want me to show the exact lines? [reply "yes" to preview]
    → Immediate notify. Include exact fix.
    → Suggest editing AGENTS.md, MEMORY.md, or TOOLS.md.
    → Offer to show the edit (never apply automatically).
+
+### Rate limiting on notifications
+- Once a conflict (rule-id) is notified, **do NOT repeat for 8 hours**.
+- If user replies or dismisses → reset cooldown.
+- If the underlying file changes (different content_hash) → re-evaluate, re-notify.
+- Maximum 3 unique conflict notifications per session (prevents spam on first scan).
 ```
 
 ---
@@ -212,6 +218,17 @@ NEON_TABLE=memories_supabase_mirror
 }
 ```
 
+### Connection troubleshooting (from production)
+
+| Symptom | Fix |
+|---------|-----|
+| `ERR_INVALID_CHAR` in header | Full API key string has restricted chars. Write key directly in script body, NOT via template with `***` placeholder |
+| Neon pooler timeout on rapid reconnect | Use `connection_timeout=5000` with exponential backoff (double on each retry, cap at 30s) |
+| `invalid input syntax for type json` on JSONB insert | The value is already a string. Use `JSON.stringify(val)` — it safely wraps strings AND objects. Never `JSON.parse()`, which fails on strings. |
+| Supabase REST POST returns 401 with Bearer challenge | RLS policy blocks inserts even with service_role key. Either disable RLS on table, or use a dedicated insert-only policy. |
+| Node 24 ESM/CJS conflict (`require` vs top-level await) | Write scripts as `.cjs` files or add `"type": "commonjs"` to package.json. Bun avoids this entirely. |
+| Batch insert partial success (380/533 inserted) | JSONB cast fails on NULL/empty metadata. In `toJson()`: if val is null/empty string, return `'{}'`. Always `JSON.stringify()`, never direct cast. |
+
 ---
 
 ## Section 4 — What NOT to do (anti-patterns from production)
@@ -224,6 +241,8 @@ NEON_TABLE=memories_supabase_mirror
 - ❌ Do NOT attempt to index files < 100 bytes (they're always noise)
 - ❌ Do NOT overwrite user's AGENTS.md, MEMORY.md, or TOOLS.md — only suggest edits
 - ❌ Do NOT run scan+upload on every heartbeat (cache results, re-scan weekly at most)
+- ❌ Do NOT output the same command result 3 times due to timeouts (dedup sequential identical outputs)
+- ❌ Do NOT use `connection_timeout=2000` for Neon pooler on rapid connections — use 5000ms with backoff
 
 ---
 
