@@ -1,0 +1,5 @@
+{
+  "id": "case-003",
+  "input": "HELLO WORLD!",
+  "expected": { "contains": ["hello", "world"] }
+}

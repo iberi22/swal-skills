@@ -1,0 +1,5 @@
+{
+  "id": "case-002",
+  "input": "Greet the planet kindly",
+  "expected": { "contains": ["hello"] }
+}

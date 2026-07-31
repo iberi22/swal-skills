@@ -1,0 +1,72 @@
+<let name="bench_id">sample-task</let>
+<let name="topology">solo</let>
+
+<let name="tools">
+[
+  "fs.read",
+  "fs.write",
+  "fs.replace",
+  "fs.search",
+  "shell.run",
+  "web.fetch"
+]
+</let>
+
+<let name="providers">
+{
+  "openai": { "model": "gpt-5", "temperature": 0.2 },
+  "gemini": { "model": "gemini-2.5-pro", "temperature": 0.2 },
+  "qwen":   { "model": "Qwen2.5-Coder", "temperature": 0.2 }
+}
+</let>
+
+<let name="variant">base</let>
+<let name="variants">
+{
+  "base":   { "description": "Deterministic, coding/precision" },
+  "fast":   { "description": "Lower latency, smaller context" },
+  "creative": { "description": "Higher temperature for ideation" }
+}
+</let>
+
+<let name="tool_aliases">
+{
+  "qwen": {
+    "fs.read": "fs.read",
+    "fs.write": "fs.write",
+    "fs.replace": "fs.replace",
+    "fs.search": "fs.search",
+    "shell.run": "shell.run",
+    "web.fetch": "web.fetch"
+  }
+}
+</let>
+
+<let name="constraints">
+[
+  "Do not leak secrets",
+  "Be concise; avoid verbosity",
+  "Prefer deterministic outputs for code"
+]
+</let>
+
+<let name="prompt_variants">
+{
+  "base": "Strongly structured, minimal creativity",
+  "creative": "Exploratory tone, propose alternatives"
+}
+</let>
+
+<role>
+You are an expert agent for the given task. Follow constraints, use tools when helpful, and keep responses concise.
+</role>
+
+<task>
+Explain what you would do to accomplish the user's request and propose concrete next actions. If you need to run tools, list the commands.
+</task>
+
+<output-format>
+- title: string
+- actions: bulleted list
+- notes: short paragraph
+</output-format>

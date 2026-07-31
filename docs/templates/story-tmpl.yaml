@@ -1,0 +1,19 @@
+# Story Template (BMAD-inspired)
+meta:
+  id: "<epic>.<story>"
+  title: ""
+  status: "Draft"  # Draft | In Progress | Done
+context:
+  requirements: []
+  references: []  # e.g., ["architecture/tech-stack.md#section"]
+technical:
+  data_models: []
+  api_endpoints: []
+  components: []
+  file_paths: []  # paths and naming conventions to use
+testing:
+  test_plan: []
+  acceptance_criteria: []
+notes:
+  structure_alignment: []
+  risks: []

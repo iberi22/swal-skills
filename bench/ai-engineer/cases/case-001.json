@@ -1,0 +1,26 @@
+{
+  "bench_id": "ai-engineer",
+  "title": "Add an embeddings-powered search endpoint",
+  "input": {
+    "repo_hint": "services/api/",
+    "task": "Design and implement a /search endpoint that uses vector embeddings to retrieve top-5 results.",
+    "constraints": [
+      "OpenAPI sketch required",
+      "Prefer minimal diffs",
+      "Add quick unit test stub"
+    ]
+  },
+  "expected": {
+    "criteria": [
+      "OpenAPI path + schema present",
+      "Endpoint implemented with placeholder vector index or adapter",
+      "At least one unit test stub created",
+      "No breaking changes to existing endpoints"
+    ]
+  },
+  "providerVariants": [
+    { "provider": "openai", "model": "gpt-5", "variant": "base" },
+    { "provider": "gemini", "model": "gemini-2.5-pro", "variant": "base" },
+    { "provider": "qwen",   "model": "Qwen2.5-Coder", "variant": "base" }
+  ]
+}

@@ -1,0 +1,18 @@
+# Normalize text files, enforce LF in repo
+* text=auto eol=lf
+
+# Shell scripts should be LF
+*.sh text eol=lf
+.husky/* text eol=lf
+
+# Code and config
+*.py text eol=lf
+*.poml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+
+# Windows-specific binaries (no normalization)
+*.exe binary
+*.dll binary

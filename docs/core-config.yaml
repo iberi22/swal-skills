@@ -1,0 +1,16 @@
+# BMAD-inspired core configuration for POML-first workflows
+markdownExploder: true
+prd:
+  prdSharded: true
+  prdShardedLocation: docs/prd
+architecture:
+  architectureSharded: true
+  architectureShardedLocation: docs/architecture
+customTechnicalDocuments: null
+devLoadAlwaysFiles:
+  - docs/architecture/coding-standards.md
+  - docs/architecture/tech-stack.md
+  - docs/architecture/source-tree.md
+devDebugLog: .ai/debug-log.md
+devStoryLocation: docs/stories
+slashPrefix: Studio

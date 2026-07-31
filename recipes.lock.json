@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "release": {
+    "sha": "cff06fd29d270ea9a0c69a960994e567d43a99a8",
+    "date": "2025-08-24"
+  },
+  "metrics": {
+    "sample-task": {
+      "openai": {
+        "gpt-5": {
+          "variants": {
+            "default": {
+              "accuracy": 0.6667,
+              "avg_latency_ms": 0.0,
+              "tool_calls": 0
+            }
+          }
+        }
+      }
+    },
+    "ai-engineer": {
+      "openai": {
+        "gpt-5": {
+          "variants": {
+            "base": { "accuracy": 1.0, "avg_latency_ms": 0.03, "tool_calls": 0 }
+          }
+        }
+      },
+      "gemini": {
+        "gemini-2.5-pro": {
+          "variants": {
+            "base": { "accuracy": 0.0, "avg_latency_ms": 0, "tool_calls": 0 }
+          }
+        }
+      },
+      "qwen": {
+        "Qwen2.5-Coder": {
+          "variants": {
+            "base": { "accuracy": 0.0, "avg_latency_ms": 0, "tool_calls": 0 }
+          }
+        }
+      }
+    }
+  }
+}
