@@ -1,6 +1,6 @@
 ---
 name: deploy-anywhere
-description: Deploy applications to any hosting platform — Cloudflare Pages, Vercel, Railway, Render, Fly.io, Netlify, and more. Use when: "Deploy my app", "Deploy to production", "Push this live", "Host this website".
+description: "Deploy applications to any hosting platform — Cloudflare Pages, Vercel, Railway, Render, Fly.io, Netlify, and more. Use when: \"Deploy my app\", \"Deploy to production\", \"Push this live\", \"Host this website\"."
 license: MIT
 metadata:
   author: swal

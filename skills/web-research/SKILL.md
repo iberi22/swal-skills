@@ -1,13 +1,13 @@
 ---
 name: web-research
-description: Use for all web research tasks - market research, competitor analysis, deep research on topics, finding information about leads/prospects, technology trends, and any inquiry requiring current web information.
+description: "Use for all web research tasks - market research, competitor analysis, deep research on topics, finding information about leads/prospects, technology trends, and any inquiry requiring current web information."
 license: MIT
 metadata:
   author: swal
   version: "1.0.0"
-  {
-    "openclaw": { "emoji": "🔍", "requires": {} }
-  }
+  openclaw:
+    emoji: "🔍"
+    requires: {}
 ---
 
 # Web Research Skill
