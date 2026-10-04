@@ -1,6 +1,6 @@
 ---
 name: web-design-guidelines
-description: Review UI code for compliance with web interface best practices. Audits your code for 100+ rules covering accessibility, performance, and UX. Use when: "Review my UI", "Check accessibility", "Audit design", "Review UX", "Check my site against best practices".
+description: "Review UI code for compliance with web interface best practices. Audits your code for 100+ rules covering accessibility, performance, and UX. Use when: \"Review my UI\", \"Check accessibility\", \"Audit design\", \"Review UX\", \"Check my site against best practices\"."
 license: MIT
 metadata:
   author: swal
